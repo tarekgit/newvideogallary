@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8" style="background-color:gray;height:40vw;margin:0px;padding:0px;">
+		<iframe id='active' style="width:100%;height:100%;"  src="#" frameborder="0" allowfullscreen></iframe>
+	</div>
+    <div class="col-sm-4" style="background-color:#5c5c8a;height:40vw;overflow:auto;padding:10px;text-align:center;" id='tabbox'>
+	
+	</div>
+  </div>
+</div>
+
+<script>
+
+link=[];
+link.push(['Morbid to Marvellous | Gorai Films | DPHE','https://www.youtube.com/embed/VNeMy1WyEqg','http://img.youtube.com/vi/VNeMy1WyEqg/2.jpg']);
+link.push(['Journey Towards Water Point Mapping','https://www.youtube.com/embed/u7cvmD0Tq3A','http://img.youtube.com/vi/u7cvmD0Tq3A/2.jpg']);
+link.push(['National Sanitation and Handwashing Day','https://www.youtube.com/embed/ombUJyjMtyc','http://img.youtube.com/vi/ombUJyjMtyc/2.jpg'])
+
+document.getElementById('active').src=link[0][1];
+
+for (var i=0;i<link.length;i++){
+	var elm=document.getElementById('tabbox');
+	elm.innerHTML+="<button style='width:90%;height:100px;border:2px solid #00e6e6;margin:3px;background-color:rgba(0,0,0,0.3);color:#00b300;font-weight:bold;padding:5px;' onclick='showme("+i+")'><span style='width:70%;display:inline-block;'>"+link[i][0]+"</span><img style='width:30%;height:100%;padding:2px;' src='"+link[i][2]+"' alt='posterimage'></button>";
+}
+
+function showme(no){
+	document.getElementById('active').src=link[no][1];
+}
+
+</script>
+
+</body>
+</html>
